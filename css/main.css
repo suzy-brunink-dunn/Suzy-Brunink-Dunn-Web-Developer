@@ -95,153 +95,357 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-/* UNIVERSAL SYTLES */
+
+/* ===========================  UNIVERSAL STYLES  ========================== */
 
 * {
     box-sizing: border-box;
 }
 
 html {
-    background-color: rgba(170, 143, 160, .45);
+    font-size: 16px;
     height: 100%;
     width: 100%;
 }
 
 body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+header a,
+footer {
+    color: #fff;
+    font-family: 'Amatic SC', cursive;
+}
+
+.content-wrapper {
+    margin: 50px 0;
+    width: 90%;
+  }
+
+a {
+    text-decoration: none;
+  }
+
+ol,
+ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-/* NAVBAR STYLES */
+p {
+    margin: 0;
+}
 
-nav {
-    background-color: rgba(31, 32, 43, .55);
+h2,
+h3,
+h4 {
     font-family: 'Amatic SC', cursive;
-    font-size: 1.7rem;
-    padding: 0 48px;
-    letter-spacing: 2px;
+    letter-spacing: 1.7px;
+}
+
+/* These are the sectional headlines */
+h2 {
+    font-size: 2.2em;
+    margin: 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* These are the portfolio headlines */
+h3 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+/* These are the contact and social headlines */
+h4 {
+    font-size: 1.6em;
+}
+
+address {
+    font-style: normal;
+    text-align: center;
+}
+
+img {
     width: 100%;
 }
 
-.navbar {
+figure {
+    margin: 0;
+}
+
+/* ===========================  BASE HEADER AND FOOTER STYLES  ========================== */
+
+header,
+footer {
     align-items: center;
+    background-color: rgba(31, 32, 43, .75);
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: center; 
+}
+
+header {
+    padding: 15px 0;
     position: fixed;
     width: 100%;
-    z-index: 100;    
+    z-index: 3;  
 }
 
-.logo,
-.nav-item a {
-    text-decoration: none;
-    color: #fff;
-    padding: 0 32px;
-}
-
-.nav-links {
+header .content-wrapper {
+    align-items: center;
     display: flex;
-    list-style: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0;
 }
 
-.nav-item a:hover,
-.logo:hover {
+header .logo {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-divider {
+    background-color: rgba(255, 255, 255, .45);
+    height: 1px;
+    margin: 10px 0 10px 0;
+    width: 100%;
+  }
+
+header nav {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 60%;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+} 
+
+header nav ul li,
+header .logo {
+    font-size: 1.7em;
+} 
+
+header .nav-item a:hover,
+header .logo:hover {
     text-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 30px;
 }
 
-/* HERO STYLES */
-
-.hero {
-    background: url(../img/simon-matzinger-twukN12EN7c-unsplash.jpg) no-repeat center center fixed;
-    background-size: cover;
-    box-shadow: -5px -25px 50px 0 whitesmoke inset;
-    display: flex;
-    height: 900px;
-    width: 100%;      
+footer {
+    flex-direction: column;
+    text-align: center;
 }
 
-.hero:before { 
-    background-color: rgba(192, 192, 192, .55);
+footer p {
+    margin: 0;
+}
+
+footer .content-wrapper {
+    margin: 50px 0;
+    width: 55%;
+}
+
+footer .contact {
+    margin-bottom: 50px;
+}
+
+footer .social h4 {
+    text-align: center;
+}
+
+footer .social-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .contact p,
+footer .copyright p {
+    font-size: 1.4em;
+    letter-spacing: 1.7px;
+}
+
+footer .social-icons p {
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid rgb(172, 109, 149);
+    border-radius: 50%;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+}
+  
+footer .social-icons p i {
+    color: rgb(172, 109, 149);
+    font-size: 1.7em;
+}
+
+footer .social-icons p a:hover {
+    opacity: 0.6;
+}
+
+footer .copyright {
+    margin: 20px 0;
+}
+
+/* ===========================  MOBILE STYLES - HOMEPAGE  ========================== */
+
+/* HERO AREA STYLES */
+
+.hero-area {
+    background: url('../img/suzy-hero.jpg') center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: relative;
+    min-height: 520px;     
+}
+
+.hero-area:before { 
+    background-color: rgba(192, 192, 192, .60);
     content: "";
-    height: 900px;
+    height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;   
 }
   
-.hero * {
+.hero-area * {
     position: relative; 
 }
 
-.content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 540px;
-}
-
-.content p {
-    background: rgba(255, 140, 0, .45);
-    -webkit-box-shadow: 5px 5px 15px 31px rgba(255, 140, 0, 0.5); 
-    box-shadow: 5px 5px 15px 31px rgba(255, 140, 0, 0.5);
-    border-radius: 50%;
+.hero-area p {
     color: #000;
     font-family: 'Amatic SC', cursive;
     font-weight: 600;
-    font-size: 1.9em;
-    line-height: 1.5em;
+    font-size: 1.6em;
+    line-height: 1.7em;
+    margin-top: 100px;
     padding: 50px 55px;
 }
 
-.content span {
-    font-size: 2.3em;
+.hero-area span {
+    font-size: 2.1em;
 }
 
-/* ABOUT STYLES */
+/* PORTFOLIO SECTION STYLES */
 
-.about-wrapper {
-    background-color: rgba(170, 143, 160, .45);
-    height: 440px;
-    width: 100%;
+.portfolio-section {
+    background-color: rgb(225, 226, 234);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+  
+.portfolio-section h2 {
+    margin-bottom: 30px;
 }
 
-.about {
+.portfolio-items {
     align-items: center;
     display: flex;
     flex-flow: row wrap;
-    height: 100%;
-    justify-content: space-between;
-    padding: 2em;  
+    justify-content: center;
+  }
+  
+.portfolio-section h3 {
+    margin: 20px 0;
+    text-align: center;
 }
 
-.div-1, .div-2, .div-3 {
+.portfolio-section p {
+    font-size: 1em;
+    line-height: 1.5rem;
+} 
+
+.portfolio-section article {
+    margin-bottom: 50px;
+}
+
+.portfolio-content {
+    margin-bottom: 30px;
+}
+
+.portfolio-content span {
+    box-shadow: inset 0 -.5em 0 rgba(170, 143, 160, .55);
+    color: inherit;  
+    text-decoration: none;
+}
+
+.portfolio-section figure:hover {
+    opacity: .7;   
+    transition: .3s ease-in-out;
+}
+
+/* ABOUT AREA STYLES */
+
+.about-section {
+    align-items: center;
+    background-color: rgba(170, 143, 160, .45);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.about-items {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.about-content {
     align-items: center;
     color: #000;
-    display: flex;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1em;
-    height: auto;
-    justify-content: center;
+    display: flex; 
+    justify-content: center; 
     line-height: 1.8em; 
+    margin-bottom: 30px;
 }
 
-.about span,
-.about a {
+.about-section h2 {
+    margin-bottom: 30px;
+}
+
+.about-content span,
+.about-content a {
     color: #9D6479;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.7em; 
+    font-family: 'Amatic SC', cursive; 
     font-weight: 700;
-    text-decoration: underline; 
     letter-spacing: 2px;
 }
 
-.about a {
+.about-content span {
+    font-size: 1.7em;
+    text-decoration: underline; 
+}
+
+.about-content a {
     font-size: 1.3em;
 }
 
-.about a:hover {
+.about-content a:hover {
     opacity: 0.6;
 }
 
@@ -325,16 +529,179 @@ nav {
    Modify as content requires.
    ========================================================================== */
 
-@media all and (min-width: 1200px) {
-    .div-1, .div-2, .div-3 {
-      flex-basis: 30%;
+
+/* ===========================  TABLET STYLES - HOMEPAGE  ========================== */
+
+@media only screen and (min-width: 768px){
+    .content-wrapper {
+        max-width: 83%;
+        margin: 50px 0;
+    }
+  
+    /* Header Styles */
+  
+    header {
+        justify-content: space-around;
+        padding: 30px 0;
+    }
+  
+    header .content-wrapper { 
+        justify-content: space-between;
+        width: 100%;
+    }
+  
+    header .logo {
+        width: 50%;
+    }
+    
+    .header-divider {
+        display: none;
+    }
+  
+    header nav {
+        width: 40%;
+    }
+    
+    header nav ul {
+        justify-content: space-between;
+    } 
+
+    /* Hero Area Styles */
+  
+    .hero-area {
+        min-height: 720px;
     }
 
-    .div-1, .div-2 {
-      border-right: 1px solid #555;
-      padding-right: 30px;
+    .hero-area p {
+        font-size: 1.8em;
+        margin-top: 80px;  
+    }
+
+    .hero-area span {
+        font-size: 2em;
+    }
+
+    /* Portfolio Section Styles */
+
+    .portfolio-section article {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    
+    .portfolio-content,
+    .portfolio-section figure {
+        width: 50%;
+    }
+
+    .portfolio-section article {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .portfolio-content {
+        margin-right: 50px;
+    }
+
+    .portfolio-section h2 {
+        margin-bottom: 40px;
+    }
+
+    .portfolio-section h3 {
+        margin: 0;
+        padding-bottom: 10px;
+        width: 100%;
+    }  
+
+    /* Footer Styles */
+
+    footer .content-wrapper {
+        margin: 100px 0;
+        width: 65%;
+    }
+    
+    .footer-content {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer .contact {
+        margin-bottom: 0;
+    }
+    
+    footer h4 {
+        font-size: 1.5em;
+        margin-bottom: 40px;
+    }
+    
+    footer p {
+        line-height: 1.28;
+    }
+    
+    footer .social-icons {
+        width: 12.5em;
+        justify-content: space-between;
+    }
+    
+    footer .copyright {
+        width: 100%;
     }
 }
+
+/* ===========================  DESKTOP STYLES - HOMEPAGE  ========================== */
+
+@media only screen and (min-width: 1200px){
+    .content-wrapper {
+        max-width: 80%;
+    }
+
+    /* Header Styles */
+
+    header {
+        padding: 30px 0;
+    }
+    
+    header .logo {
+        width: 30%;
+    }
+
+    header nav {
+        width: 25%;
+    }
+
+    /* Hero Area Styles */
+
+    .hero-area p {
+        font-size: 1.8em;
+    }
+
+    /* Portfolio Styles */
+
+    .portfolio-content,
+    .portfolio-section figure {
+        width: 45%;
+    }
+    
+    /* About Styles */
+ 
+    .about-content {
+        flex-basis: 33.33%;
+
+    }
+
+    .about-content {
+        padding-right: 70px;
+        margin: 0;
+    }
+}
+
+
+
+
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),

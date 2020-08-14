@@ -95,7 +95,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
 /* ===========================  UNIVERSAL STYLES  ========================== */
 
 * {
@@ -152,9 +151,9 @@ h4 {
 /* These are the sectional headlines */
 h2 {
     font-size: 2.2em;
-    margin: 0;
     text-align: center;
     text-decoration: underline;
+    margin: 0;
 }
 
 /* These are the portfolio headlines */
@@ -177,7 +176,7 @@ address {
 }
 
 img {
-    width: 100%;
+    width: 95%;
 }
 
 figure {
@@ -283,6 +282,19 @@ footer .copyright p {
     letter-spacing: 1.7px;
 }
 
+footer .contact a {
+    color: #fff;
+}
+
+footer .contact p,
+footer .contact a {
+    font-weight: 600;
+}
+
+footer figure img {
+    border: 2px solid #fff;
+}
+
 footer .social-icons p {
     align-items: center;
     background-color: #fff;
@@ -318,11 +330,11 @@ footer .copyright {
     flex-flow: row wrap;
     justify-content: center;
     position: relative;
-    min-height: 520px;     
+    min-height: 550px;     
 }
 
 .hero-area:before { 
-    background-color: rgba(192, 192, 192, .60);
+    background-color: rgba(192, 192, 192, .30);
     content: "";
     height: 100%;
     left: 0;
@@ -335,17 +347,27 @@ footer .copyright {
     position: relative; 
 }
 
-.hero-area p {
+.hero-content {
+    align-items: center;
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 120px;
+    position: relative;
+    
+}
+
+.hero-content p {
     color: #000;
     font-family: 'Amatic SC', cursive;
     font-weight: 600;
     font-size: 1.6em;
     line-height: 1.7em;
-    margin-top: 100px;
-    padding: 50px 55px;
 }
 
-.hero-area span {
+.hero-content span {
     font-size: 2.1em;
 }
 
@@ -359,7 +381,7 @@ footer .copyright {
 }
   
 .portfolio-section h2 {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .portfolio-items {
@@ -387,10 +409,40 @@ footer .copyright {
     margin-bottom: 30px;
 }
 
-.portfolio-content span {
-    box-shadow: inset 0 -.5em 0 rgba(170, 143, 160, .55);
-    color: inherit;  
-    text-decoration: none;
+.portfolio-content .color-1 {
+    box-shadow: inset 0 -.5em 0 rgba(218,247,246,0.9);
+}
+
+.portfolio-content .color-2 {
+    box-shadow: inset 0 -.5em 0 rgba(119,164,102,0.8);
+}
+
+.portfolio-content .color-3 {
+    box-shadow: inset 0 -.5em 0 rgba(223,191,159,0.9);
+}
+
+.portfolio-content .color-4 {
+    box-shadow: inset 0 -.5em 0 rgba(80,111,86,0.7);
+}
+
+.portfolio-items .figure-1 img {
+    -webkit-box-shadow: 0px 2px 12px -1px rgba(218,247,246,0.9); 
+    box-shadow: 0px 2px 12px -1px rgba(218,247,246,0.9);
+}
+
+.portfolio-items .figure-2 img {
+    -webkit-box-shadow: 0px 2px 12px -1px rgba(119,164,102,0.9); 
+    box-shadow: 0px 2px 12px -1px rgba(119,164,102,0.9);
+}
+
+.portfolio-items .figure-3 img {
+    -webkit-box-shadow: 0px 2px 12px -1px rgba(223,191,159,0.9); 
+    box-shadow: 0px 2px 12px -1px rgba(223,191,159,0.9);
+}
+
+.portfolio-items .figure-4 img {
+    -webkit-box-shadow: 0px 2px 12px -1px rgba(80,111,86,0.9); 
+    box-shadow: 0px 2px 12px -1px rgba(80,111,86,0.9);
 }
 
 .portfolio-section figure:hover {
@@ -430,7 +482,6 @@ footer .copyright {
 
 .about-content span,
 .about-content a {
-    color: #9D6479;
     font-family: 'Amatic SC', cursive; 
     font-weight: 700;
     letter-spacing: 2px;
@@ -529,7 +580,6 @@ footer .copyright {
    Modify as content requires.
    ========================================================================== */
 
-
 /* ===========================  TABLET STYLES - HOMEPAGE  ========================== */
 
 @media only screen and (min-width: 768px){
@@ -551,7 +601,7 @@ footer .copyright {
     }
   
     header .logo {
-        width: 50%;
+        width: 40%;
     }
     
     .header-divider {
@@ -574,7 +624,10 @@ footer .copyright {
 
     .hero-area p {
         font-size: 1.8em;
-        margin-top: 80px;  
+    }
+
+    .hero-content {
+        margin-top: 140px;  
     }
 
     .hero-area span {
@@ -617,15 +670,21 @@ footer .copyright {
     /* Footer Styles */
 
     footer .content-wrapper {
-        margin: 100px 0;
-        width: 65%;
+        margin: 50px 0;
+        width: 90%;
+    }
+
+    footer figure {
+        width: 35%;
     }
     
     .footer-content {
         align-items: center;
         display: flex;
+        flex-basis: 33.33%;
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 40px;
     }
 
     footer .contact {
@@ -689,7 +748,7 @@ footer .copyright {
  
     .about-content {
         flex-basis: 33.33%;
-
+        margin-bottom: 100px;
     }
 
     .about-content {
@@ -697,7 +756,6 @@ footer .copyright {
         margin: 0;
     }
 }
-
 
 
 

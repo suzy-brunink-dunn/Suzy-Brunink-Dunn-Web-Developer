@@ -153,19 +153,21 @@ figure {
 
 /* =========================== DIVIDER LINE STYLES  ========================== */
 
-.portfolio-section-divider,
-.about-section-divider { 
+.hero-divider {
+    background-color: rgba(255, 255, 255, 0.8);
+    filter: blur(.5px);
+    height: 1px;
+    margin: 10px 0 5px 0;
+    width: 100%;
+}
+
+.section-divider { 
     border-top: 1px solid  #862121;
     height: 40px;
     width: 100%;	
 }
 
-.portfolio-section-divider {
-    margin-top: 150px;
-}
-
-.portfolio-section-divider h2,
-.about-section-divider h2 {
+.section-divider h2 {
     background-color: #fff;
     color: #862121;
     font-family: 'Poppins', sans-serif;
@@ -179,18 +181,31 @@ figure {
 	width: 40%;	
 }
 
+.portfolio-section-divider {
+    margin-top: 100px;
+}
+
+.footer .section-divider {
+    margin-bottom: ;
+    width: 100%;
+}
+
+.footer-section-divider h2 {
+    width: 50%;
+}
+
 /* ===========================  BASE HEADER AND FOOTER STYLES  ========================== */
 
 header,
 footer {
     align-items: center;
-    background-color: rgba(31, 32, 43, .25);
     display: flex;
     flex-flow: row wrap;
     justify-content: center; 
 }
 
 header {
+    background-color: rgba(31, 32, 43, .25);
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -231,11 +246,17 @@ header .nav-item a:hover {
     opacity: .6;
 }
 
-
-
 footer {
+    background: linear-gradient(to bottom right, #002f4b, #dc4225);
+    color: #fff;
     flex-direction: column;
+    margin-top: 40px;
     text-align: center;
+}
+
+.footer-content img {
+    filter: opacity(.7);
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.4);
 }
 
 footer p {
@@ -251,8 +272,11 @@ footer .contact {
     margin-bottom: 50px;
 }
 
-footer .social h4 {
-    text-align: center;
+footer h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 footer .social-icons {
@@ -261,48 +285,37 @@ footer .social-icons {
     justify-content: space-around;
 }
 
-footer .contact p,
-footer .copyright p {
-    font-size: 1.4em;
-    letter-spacing: 1.7px;
-}
-
-footer .contact a {
-    color: #fff;
-}
-
-footer .contact p,
-footer .contact a {
-    font-weight: 600;
-}
-
-footer figure img {
-    border: 2px solid #fff;
-}
-
-footer .social-icons p {
-    align-items: center;
-    background-color: #fff;
-    border: 2px solid rgb(172, 109, 149);
-    border-radius: 50%;
-    display: flex;
-    height: 40px;
-    justify-content: center;
-    width: 40px;
-}
-  
 footer .social-icons p i {
-    color: rgb(172, 109, 149);
-    font-size: 1.7em;
+    color: #fff;
+    font-size: 1.4em; 
+    background-color: #862121;  
+    border-radius: 50%; 
+    padding: 8px;
 }
 
-footer .social-icons p a:hover {
-    opacity: 0.6;
+footer .contact p,
+footer .contact a,
+footer .copyright {
+    color: #fff;
+    font-family: 'Lora', serif;
+    letter-spacing: .8px;
+    text-transform: lowercase;
+}
+
+footer .contact p,
+footer .contact a {
+    font-size: .95em;
 }
 
 footer .copyright {
-    margin: 20px 0;
+    font-size: .85em;
+    margin: 20px 0; 
 }
+
+footer .social-icons p a:hover {
+    opacity: .6;    
+}
+
 
 /* ===========================  MOBILE STYLES - HOMEPAGE  ========================== */
 
@@ -334,14 +347,6 @@ footer .copyright {
     position: relative;
 }  
 
-.hero-divider {
-    background-color: rgba(255, 255, 255, 0.8);
-    filter: blur(.5px);
-    height: 1px;
-    margin: 10px 0 5px 0;
-    width: 100%;
-  }
-
 .hero-content {
     align-items: center;
     display: flex;
@@ -358,13 +363,13 @@ footer .copyright {
 }
 
 .hero-content p {
+    color: #fff;
 	font-family: "lora-regular", serif;
     font-size: .80em;
-	line-height: 2.4rem;
+	line-height: 2.4em;
 	text-transform: uppercase;
-    letter-spacing: .2rem;
+    letter-spacing: .2em;
     margin: 0;
-	color: #fff;
 }
 
 .hero .social {
@@ -488,8 +493,13 @@ footer .copyright {
 
 .avatar img {
     box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.4);
-    margin: 30px 0;
     filter: brightness(110%);
+    margin: 30px 0;  
+}
+
+.intro-content h1 {
+    font-family: "poppins-medium", sans-serif;
+    font-size: 1.6em;   
 }
 
 .intro-content p {
@@ -497,9 +507,8 @@ footer .copyright {
     color: #6E6E6E;
     font-size: .90em;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 2em;
     margin: 0;
-    padding: 20px;
 }
 
 .intro-content p span {
@@ -507,34 +516,26 @@ footer .copyright {
     font-family: 'Poppins', sans-serif;
     font-size: 2em;
     font-weight: 400;
-    /* letter-spacing: .10em; */
     line-height: 1.5em;
-    /* font-variant: small-caps; */
     text-transform: uppercase;
     text-shadow: 1px 1px 2px #082b34;
 }
 
-.intro-content h1 {
-    font-family: "poppins-medium", sans-serif;
-    font-size: 1.6em;
-    
+.intro-content .paragraph-1 {
+    padding: 25px 20px;
+}
+
+.intro-content .paragraph-2 {
+    padding: 0 20px 25px 20px;
 }
 
 
 
-.intro-content {
-	position: relative;
-	text-align: left;
-	max-width: 850px;
-	margin-bottom: 3.6rem;
-}
 
-.about-content h3 {
-	font-family: "poppins-semi-bold", sans-serif;
-	font-size: 1.8rem;
-	text-transform: uppercase;
-	letter-spacing: .25rem;
-}
+
+
+
+
 
 
 

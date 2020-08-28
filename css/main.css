@@ -242,7 +242,7 @@ header .nav-item a:hover {
 
 footer {
     align-items: center;
-    background: linear-gradient(to bottom right,#002f4b, transparent, #dc4225);
+    background: linear-gradient(to bottom right,#002f4b,#dc4225);
     color: #fff;
     display: flex;
     flex-flow: row wrap;
@@ -259,7 +259,7 @@ footer .contact {
 }
 
 footer h4 {
-    color: #862121;
+    color: #fff;
     font-family: 'Poppins-bold', sans-serif;
     font-size: 1.2em;
     font-weight: 700;
@@ -273,7 +273,7 @@ footer p {
 footer .contact p, 
 footer .contact a,
 footer .copyright { 
-    color: #862121;
+    color: #fff;
 	font-family: "poppins-regular", sans-serif;
     font-size: .95em;
     font-weight: 500;
@@ -368,6 +368,10 @@ footer .social-icons p a:hover {
     flex-flow: row wrap;
     justify-content: center;
 }
+
+.portfolio-section .section-divider {
+    margin: 20px 0;
+}
   
 .portfolio-items {
     align-items: center;
@@ -378,7 +382,6 @@ footer .social-icons p a:hover {
 
 .portfolio-section article {
     margin-bottom: 50px; 
-    padding: 20px; 
 }
 
 .portfolio-content {
@@ -437,27 +440,30 @@ footer .social-icons p a:hover {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin-bottom: 60px;
 }
 
-.about-content {
+.about-intro {
     align-items: center;
     display: flex; 
     flex-flow: row wrap;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 } 
 
 .about-image {
     align-items: center;
+    background-color: #f6f6f6;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 40px; 
+    margin-top: 60px;   
+    padding: 20px;
 }
 
 .avatar {
     margin: auto;
-    width: 60%;
+    width: 70%;
 }
 
 .avatar img {
@@ -468,24 +474,31 @@ footer .social-icons p a:hover {
     width: 100%; 
 }
 
-.about-content h1 {
+.about-headline h1 {
     font-family: "poppins-medium", sans-serif;
-    font-size: 1.6em;  
+    font-size: 1.4em;
+    letter-spacing: .10em; 
+    text-transform: uppercase; 
 }
 
-.about-paragraph {
+.about-content {
     background-color: #f6f6f6;
-    padding: 20px;
+    margin-top: 40px;
+    padding: 10px 20px 40px 20px;
+}
+  
+.about-content div {
+    padding: 5px;
 }
 
-.about-paragraph p {
+.about-content p {
     color: #6E6E6E;
     font-size: .90em;
     font-weight: 400;
     line-height: 2em;
 }
 
-.about-paragraph p span {
+.about-content p span {
     color: #313131;
     font-family: 'Poppins', sans-serif;
     font-size: 2em;
@@ -494,202 +507,6 @@ footer .social-icons p a:hover {
     text-transform: uppercase;
     letter-spacing: .10em;
 }
-
-/* =========================== RESUME STYLES =========================== */
-
-.resume-section {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    /* background-color: #f6f6f6; */
-}
-
-.resume-header h2 {
-	
-}
-
-.resume-section h2 {
-    text-align: center;
-}
-
-.resume-timeline {
-	max-width: 980px;
-}
-
-.timeline-wrap {
-	position: relative;
-	margin-top: 1.5em;
-	margin-bottom: 6em;
-}
-
-.timeline-wrap::before {
-	content: "";
-	display: block;
-	width: 1px;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.1);
-	position: absolute;
-	left: 35%;
-	top: 0;
-}
-
-.timeline-block {
-	position: relative;
-	padding-top: 1.5em;
-}
-
-.timeline-ico {
-	height: 4.8rem;
-	width: 4.8rem;
-	line-height: 4.8em;
-	background: #313131;
-	border-radius: 50%;
-	text-align: center;
-	color: #FFFFFF;
-	position: absolute;
-	left: 35%;
-	top: .9em;
-	margin-left: -2.4em;
-}
-
-.timeline-ico i {
-	position: relative;
-	left: .05em;
-	top: .2em;
-}
-
-.timeline-header {
-	float: left;
-	width: 35%;
-	padding-right: 90px;
-	text-align: right;
-}
-
-.timeline-header h3 {
-	margin-bottom: 0;
-}
-
-.timeline-content p,
-.timeline-header p {
-    color: #6E6E6E;
-    font-weight: 400;
-    line-height: 2em;
-    margin: 0;
-}
-
-.timeline-header p {
-	font-family: "poppins-regular", sans-serif;
-}
-
-.timeline-content p {
-    font-size: .90em;
-}
-
-.timeline-content {
-	margin-left: 35%;
-	padding-left: 60px;
-}
-
-.timeline-content h4 {
-	position: relative;
-	padding-bottom: 1.8em;
-}
-
-.timeline-content h4::after {
-	content: "";
-	display: block;
-	height: 3px;
-	width: 50px;
-	background: rgba(0, 0, 0, 0.2);
-	position: absolute;
-	left: 0;
-	bottom: 0;
-}
-
-
-
-
-
-
-
-
-
-/**
- * responsive:
- * resume
- * ------------------------------------------------------------------- 
- */
- @media only screen and (max-width:1024px) {
-	#resume .timeline-header {
-		padding-right: 50px;
-	}
-	#resume .timeline-header h3 {
-		font-size: 1.8rem;
-	}
-	#resume .timeline-header p {
-		font-size: 1.4rem;
-	}
-	#resume .timeline-content {
-		padding-left: 50px;
-	}
-}
-@media only screen and (max-width:768px) {
-	#resume .timeline-wrap::before {
-		left: 2.4rem;
-	}
-	#resume .timeline-ico {
-		left: 2.4rem;
-	}
-	#resume .timeline-header {
-		float: none;
-		width: auto;
-		padding-right: 15px;
-		text-align: left;
-	}
-	#resume .timeline-header h3 {
-		font-size: 2rem;
-	}
-	#resume .timeline-header p {
-		font-size: 1.5rem;
-		margin-bottom: 1.5rem;
-	}
-	#resume .timeline-content {
-		margin: 0;
-	}
-	#resume .timeline-content h4 {
-		padding-bottom: 0;
-		padding-top: 2.1rem;
-		margin-bottom: .6rem;
-		font-size: 1.7rem;
-	}
-	#resume .timeline-content h4::after {
-		bottom: auto;
-		top: 0;
-	}
-	#resume .timeline-header, #resume .timeline-content {
-		padding-left: 7rem;
-	}
-}
-@media only screen and (max-width:480px) {
-	#resume .resume-header h2 {
-		font-size: 2.2rem;
-	}
-	#resume .timeline-wrap::before {
-		left: 1.8rem;
-	}
-	#resume .timeline-ico {
-		height: 3.6rem;
-		width: 3.6rem;
-		line-height: 3.6rem;
-		left: 1.8rem;
-		margin-left: -1.8rem;
-		font-size: 1.5rem;
-	}
-	#resume .timeline-header, #resume .timeline-content {
-		padding-left: 5.5rem;
-	}
-}
-
 
 /* ==========================================================================
    Helper classes
@@ -820,6 +637,10 @@ footer .social-icons p a:hover {
 
     /* Portfolio Section Styles */
 
+    .portfolio-section .section-divider {
+        margin: 40px 0;
+    }
+
     .portfolio-items .portfolio-image {
         align-items: center;
         display: flex;
@@ -836,6 +657,32 @@ footer .social-icons p a:hover {
         max-width: 500px;
         height: auto;
         margin: auto;
+    }
+
+    /* About Styles */
+
+    .about-wrapper {
+        padding: 0;
+    }
+
+    .about-intro {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;  
+    }
+
+    .about-image {
+        align-items: center;
+        background-color: #f6f6f6;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .avatar {
+        margin: auto;
+        width: 70%;
     }
 
     /* Footer Styles */
@@ -905,6 +752,10 @@ footer .social-icons p a:hover {
 
     /* Portfolio Styles */
 
+    .portfolio-section-divider {
+        margin-bottom: 30px;
+    }
+
     .portfolio-section article {
         display: flex;
         justify-content: space-between; 
@@ -940,25 +791,33 @@ footer .social-icons p a:hover {
     }
 
     /* About Styles */
- 
-    .about-content .about-paragraph {
-        display: flex;
-        justify-content: space-between; 
-        margin-top: 30px; 
+    
+    .about-intro {
+        justify-content: flex-start;
+        margin-top: 30px;
+    }
+
+    .about-content {
+        margin-left: 200px;
+        padding: 0;
         width: 80%;
     }
 
-    .about-paragraph div {
-        padding: 20px;
-        width: 48%;
+    .about-headline {
+        margin: 0 50px 0 0;
     }
 
-    .about-content h1 {
-        margin-right: 40px;
+    .about-headline h1 {
+        font-size: 1.8em;
+        letter-spacing: .20em; 
+    }
+
+    .about-content p {
+        padding: 0 20px;
     }
 
     .avatar {
-        width: 70%;
+        width: 80%;
     }
 }
 

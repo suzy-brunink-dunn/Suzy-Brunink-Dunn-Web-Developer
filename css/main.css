@@ -97,10 +97,6 @@ textarea {
 
 /* ===========================  UNIVERSAL STYLES  ========================== */
 
-* {
-    box-sizing: border-box;
-}
-
 html {
     font-size: 16px;
     height: 100%;
@@ -108,7 +104,8 @@ html {
 }
 
 body {
-    font-family: 'Lora', serif;
+    color: #313131;
+    font-family: "lora-regular", serif;
     font-size: 1em;
     margin: 0;
     padding: 0;
@@ -120,6 +117,8 @@ body {
 }
  
 a {
+    color: #fff;
+    font-family: "poppins-medium", sans-serif;
     text-decoration: none;
 }
 
@@ -130,8 +129,33 @@ ul {
     padding: 0;
 }
 
+h1,
+h2,
+h3,
+p span {
+    font-family: "poppins-medium", sans-serif;
+    font-weight: 500;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+}
+
 h1 {
+    font-size: 1.6em;
     margin: 0;
+}
+
+h2 {
+    color: #862121;
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.2em;  
+}
+
+.about-content p,
+.portfolio-content p {
+    line-height: 2em;
 }
 
 address {
@@ -149,14 +173,6 @@ figure {
 
 /* =========================== SECTION DIVIDER STYLES  ========================== */
 
-.hero-divider {
-    background-color: rgba(255, 255, 255, 0.8);
-    filter: blur(.5px);
-    height: 1px;
-    margin: 10px 0 5px 0;
-    width: 100%;
-}
-
 .section-divider,
 .portfolio-section-divider,
 .about-section-divider { 
@@ -165,32 +181,31 @@ figure {
     width: 100%;	
 }
 
-.portfolio-section-divider h2,
-.about-section-divider h2 {
-    background-color: #fff;
-    color: #862121;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
-    font-weight: 500;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -20px;
-    text-align: center;
-	text-transform: uppercase;
-	width: 40%;	
-}
-
 .portfolio-section-divider {
     margin-top: 100px;
 }
 
-.footer .section-divider {
-    margin-top: 20px;
-    width: 100%;
+.portfolio-section-divider h2,
+.about-section-divider h2 {
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    text-align: center;	
 }
 
-.footer-section-divider h2 {
+.portfolio-section-divider h2 {
     width: 50%;
+}
+
+.about-section-divider h2 {
+    width: 40%;
+}
+
+.portfolio-section-divider .highlight,
+.about-section-divider .highlight {
+    background: linear-gradient(to bottom, rgba(200, 198, 209, 0.3) 50%, rgba(133, 28, 28, 0.5));
+    padding: 0 10px;
 }
 
 /* ===========================  HEADER STYLES  ========================== */
@@ -230,85 +245,12 @@ header nav ul {
 } 
 
 header .nav-item a {
-    color: #fff;
-    font-family: "poppins-medium", sans-serif;
 	font-size: 1.2em;
     font-variant: small-caps;
-    font-weight: 500;   
 }
 
 header .nav-item a:hover {
-    opacity: .6;
-}
-
-/* =========================== FOOTER STYLES =========================== */
-
-footer {
-    align-items: center;
-    background: linear-gradient(to bottom right,#002f4b,#dc4225);
-    color: #fff;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center; 
-    text-align: center;
-}
-
-footer .content-wrapper {
-    width: 55%;
-}
-
-footer .contact {
-    margin-bottom: 50px;
-}
-
-footer h4 {
-    color: #fff;
-    font-family: 'Poppins-bold', sans-serif;
-    font-size: 1.2em;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-footer p {
-    margin: 0;
-}
-
-footer .contact p, 
-footer .contact a,
-footer .copyright { 
-    color: #fff;
-	font-family: "poppins-regular", sans-serif;
-    font-size: .95em;
-    font-weight: 500;
-    letter-spacing: .5px;
-}
-
-footer .copyright {
-    font-size: .85em;
-    margin: 20px 0; 
-}
-
-.footer-content img {
-    filter: opacity(.7);
-    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.4);
-}
-
-footer .social-icons {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-}
-
-footer .social-icons p i {
-    color: #fff;
-    font-size: 1.4em; 
-    background-color: #862121;  
-    border-radius: 50%; 
-    padding: 8px;
-}
-
-footer .social-icons p a:hover {
-    opacity: .6;    
+    text-decoration: underline;
 }
 
 /* =========================== HERO STYLES =========================== */
@@ -326,10 +268,10 @@ footer .social-icons p a:hover {
 
 .hero:before {
     background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-    opacity: .7; 
     content: "";
     height: 100%;
     left: 0;
+    opacity: .7; 
     position: absolute;
     top: 0;
     width: 100%;	  
@@ -346,22 +288,30 @@ footer .social-icons p a:hover {
     justify-content: center;
 }
 
+.hero-divider {
+    background-color: rgba(255, 255, 255, 0.8);
+    filter: blur(.5px);
+    height: 1px;
+    margin: 10px 0 5px 0;
+    width: 100%;
+}
+
+.hero-content h1,
+.hero-content p {
+    color: #fff;
+}
+
 .hero-content h1 {
-	color: #fff;
-	font-family: "poppins-medium", sans-serif;
-	font-size: 2.2em;
     line-height: 1.071;
-    margin-top: 120px;
+    margin-top: 120px; 
 }
 
 .hero-content p {
-    color: #fff;
-	font-family: "lora-regular", serif;
-    font-size: .80em;
+    font-size: .90em;
+    letter-spacing: .10em;
 	line-height: 2.4em;
-	text-transform: uppercase;
-    letter-spacing: .2em;
     margin: 0;
+    text-transform: uppercase;
 }
 
 /* =========================== PORTFOLIO STYLES =========================== */
@@ -384,89 +334,87 @@ footer .social-icons p a:hover {
 }
 
 .portfolio-section article {
-    margin-bottom: 40px; 
-}
-
-.portfolio-section .section-divider {
-    margin: 60px 0; 
+    background: linear-gradient(to bottom, transparent 5%, rgba(200, 198, 209, 0.6), rgba(134, 33, 33, 0.1));
+    box-shadow: inset 0 -6px 5px 0 #fff;
+    margin-bottom: 40px;    
 }
 
 .portfolio-content {
-    background-color: #f6f6f6;
-    box-shadow: 0 2.5em 3em rgba(0,0,0,0.2);
     margin-top: 40px;
     padding: 10px 30px 40px 30px;
 }
-  
-.portfolio-content h3 {
-    color: #313131;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3em;
-    font-weight: 500;
-    letter-spacing: .10em;
-    line-height: 1.5em;
-    text-transform: uppercase;
+
+.portfolio-content .highlight {
+    background: linear-gradient(to bottom, transparent 40%, rgba(133, 28, 28, 0.5));
+    padding: 0 5px;
 }
 
-.portfolio-content p {
-    color: #6E6E6E;
-    font-size: .90em;
-    font-weight: 400;
-    line-height: 2em;
-} 
-
-.site-button {
+.portfolio-content .site-button {
+    background: linear-gradient(to bottom, transparent 50%, rgba(133, 28, 28, 0.5));
     border: 1px solid #862121;
     border-radius: 10px;
-    text-align: center;
-	display: inline-block;
     color: #862121;
+	display: inline-block;
 	font-family: "poppins-medium", sans-serif;
-    font-size: .97em;
     font-variant: small-caps;
     font-weight: 600;
     letter-spacing: 2px;
     margin-right: 10px;
     margin-top: 30px;
-	padding: 5px 14px;
-    text-decoration: none;
+    padding: 5px 14px;
 }
 
-.site-button:hover {
+.portfolio-content .site-button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.site-button:active {
-	position: relative;
-	top: 1px;
 }
 
 /* =========================== ABOUT STYLES =========================== */
 
 .about-section {
     align-items: center;
+    background-image: url('../img/let-there-be-sun.png');
+    background-size: cover;
+    box-shadow: inset 0 10px 10px 0 #fff;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-bottom: 60px;
+    position: relative; 
 }
+
+.about-section:before {
+    background: rgb(255, 255, 255);
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: .9; 
+    position: absolute;
+    top: 0;
+    width: 100%;	  
+}
+
+.about-section * {
+    position: relative;
+}  
 
 .about-intro {
     align-items: center;
     display: flex; 
     flex-flow: row wrap;
     justify-content: center;
-    margin-bottom: 60px;
 } 
+
+.about-headline .highlight {
+    background: linear-gradient(to bottom, transparent 50%, rgba(133, 28, 28, 0.5));
+    padding: 5px 10px;
+}
 
 .about-image {
     align-items: center;
-    background-color: #f6f6f6;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-top: 60px;   
-    padding: 20px;
+    margin-top: 80px; 
+    margin-bottom: 60px;    
 }
 
 .avatar {
@@ -482,38 +430,90 @@ footer .social-icons p a:hover {
     width: 100%; 
 }
 
-.about-headline h1 {
-    font-family: "poppins-medium", sans-serif;
-    font-size: 1.4em;
-    letter-spacing: .10em; 
-    text-transform: uppercase; 
+.about-content {
+    margin-bottom: 40px;
 }
 
-.about-content {
-    background-color: #f6f6f6;
-    margin-top: 40px;
-    padding: 10px 20px 40px 20px;
-}
-  
 .about-content div {
-    padding: 5px;
+    padding: 10px;
 }
 
 .about-content p {
-    color: #6E6E6E;
-    font-size: .90em;
-    font-weight: 400;
-    line-height: 2em;
+    margin: 0;
+}
+  
+.about-content p span {
+    font-size: 2em;
+    line-height: 1.5em;   
 }
 
-.about-content p span {
-    color: #313131;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2em;
-    font-weight: 400;
-    line-height: 1.5em;
-    text-transform: uppercase;
-    letter-spacing: .10em;
+/* =========================== FOOTER STYLES =========================== */
+
+footer {
+    align-items: center;
+    background: linear-gradient(to bottom right,#002f4b,#dc4225);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+    justify-content: center; 
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .content-wrapper {
+    margin: 50px 0;
+    width: 55%;
+}
+
+footer .contact {
+    margin-bottom: 50px; 
+}
+
+footer .contact p,
+footer .contact a,
+footer .copyright {
+    font-family: "poppins-medium", sans-serif;
+    font-variant: small-caps;
+    font-weight: 500;
+    letter-spacing: .10em;   
+}
+
+footer .contact a {
+    font-size: 1.1em;
+}
+
+footer .copyright {
+    margin: 20px 0; 
+}
+
+footer .social-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .social-icons p {
+    align-items: center;
+    background-color: #862121;  
+    border-radius: 50%; 
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+}
+
+footer .social-icons p i {
+    color: #fff;
+    font-size: 1.4em; 
+    padding: 8px;
+}
+
+footer .social-icons p a:hover {
+    opacity: .6;    
 }
 
 /* ==========================================================================
@@ -596,6 +596,7 @@ footer .social-icons p a:hover {
    Modify as content requires.
    ========================================================================== */
 
+
 /* ===========================  TABLET STYLES - HOMEPAGE  ========================== */
 
 @media only screen and (min-width: 768px){
@@ -604,9 +605,16 @@ footer .social-icons p a:hover {
         margin: 50px 0;
     }
 
-    .portfolio-section-divider h2,
-    .about-section-divider h2 {
+    .about-section-divider {
+        margin-top: 50px;
+    }
+
+    .portfolio-section-divider h2 {
         width: 30%;	
+    }
+
+    .about-section-divider h2 {
+        width: 25%;
     }
 
     /* Header Styles */
@@ -642,6 +650,7 @@ footer .social-icons p a:hover {
 
     .hero-content p {
         font-size: .90em;
+        letter-spacing: .2em;
     }
 
     /* Portfolio Section Styles */
@@ -657,15 +666,15 @@ footer .social-icons p a:hover {
     }
     
     .portfolio-items figure {
-        width: 80%;
         margin: auto;
+        width: 80%;
     }
         
     .portfolio-items figure img {
-        width: 100%;
-        max-width: 500px;
         height: auto;
         margin: auto;
+        max-width: 500px;
+        width: 100%; 
     }
 
     /* About Styles */
@@ -681,12 +690,7 @@ footer .social-icons p a:hover {
     }
 
     .about-image {
-        align-items: center;
-        background-color: #f6f6f6;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        margin: 0;
+        margin-top: 30px; 
     }
 
     .avatar {
@@ -709,7 +713,7 @@ footer .social-icons p a:hover {
         align-items: center;
         display: flex;
         flex-basis: 33.33%;
-        flex-direction: row;
+        flex-direction: row wrap;
         justify-content: space-around;
         margin-top: 40px;
     }
@@ -739,13 +743,21 @@ footer .social-icons p a:hover {
         max-width: 90%;
     }
 
+    .portfolio-section-divider {
+        margin-top: 150px;
+    }
+
     .portfolio-section-divider h2,
     .about-section-divider h2 {
+        font-size: 1.6em;
+    }
+
+    .portfolio-section-divider h2 {
         width: 20%;	
     }
 
-    .section-divider {
-        display: none;
+    .about-section-divider h2 {
+        width: 15%;
     }
 
     /* Header Styles */
@@ -760,23 +772,21 @@ footer .social-icons p a:hover {
 
     /* Hero Area Styles */
 
-    .hero-area p {
-        font-size: 1.8em;
+    .hero-content h1 {
+        font-size: 2.8em; 
+    }
+
+    .hero-content p {
+        font-size: 1em;
     }
 
     /* Portfolio Styles */
 
-    .portfolio-section-divider {
-        margin-bottom: 30px;
-    }
-
     .portfolio-section article {
         align-items: center;
-        border: 1px dotted #862121;
         display: flex;
         justify-content: space-around; 
-        margin: 60px 0;  
-        padding: 80px;   
+        padding: 80px;  
     }
 
     .portfolio-section figure {
@@ -784,20 +794,14 @@ footer .social-icons p a:hover {
     }
 
     .portfolio-content {
+        margin: 0;
+        padding: 20px 30px;
         width: 45%;
-    }
-
-    .portfolio-content,
-    .portfolio-content h3 {
-        margin-top: 0;
     }
 
     .portfolio-content h3 {
         font-size: 1.6em;
-    }
-
-    .portfolio-content {
-        padding: 20px 30px;
+        margin: 0;
     }
 
     .article-2,
@@ -807,45 +811,34 @@ footer .social-icons p a:hover {
 
     .article-1 .portfolio-content,
     .article-3 .portfolio-content {
-        position: relative;
-        top: 50px;
-    }
-
-    .article-1 .portfolio-image,
-    .article-3 .portfolio-image {
-        margin-bottom: 60px;
+        border-left: 1px dotted #862121; 
     }
 
     .article-2 .portfolio-content,
     .article-4 .portfolio-content {
-        position: relative;
-        top: 50px;
-    }
-
-    .article-2 .portfolio-image,
-    .article-4 .portfolio-image {
-        margin-bottom: 60px;
+        border-right: 1px dotted #862121;
     }
 
     .portfolio-items figure {
-        width: 100%;
         margin: auto;
+        width: 100%; 
     }
 
     /* About Styles */
 
-    .about-section .content-wrapper,
-    footer .content-wrapper {
+    .about-section .content-wrapper {
         max-width: 80%;
     }
     
     .about-intro {
         justify-content: flex-start;
         margin-top: 30px;
+        margin-bottom: 100px;
     }
 
     .about-content {
-        margin-left: 200px;
+        border-left: 1px dotted #862121;
+        margin-left: 250px;
         padding: 0;
         width: 80%;
     }
@@ -857,6 +850,11 @@ footer .social-icons p a:hover {
     .about-headline h1 {
         font-size: 1.8em;
         letter-spacing: .20em; 
+        padding-right: 40px;
+    }
+
+    .about-image {
+        margin-bottom: 20px;
     }
 
     .about-content p {
@@ -866,10 +864,17 @@ footer .social-icons p a:hover {
     .avatar {
         width: 80%;
     }
+
+    /* Footer Styles */
+
+    footer .content-wrapper {
+        max-width: 80%;
+    }
+
+    footer .contact p {
+        line-height: 1.5em;
+    }
 }
-
-
-
 
 
 @media print,

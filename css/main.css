@@ -10,10 +10,13 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
+html { 
     color: #222;
-    font-size: 1em;
+    font-size: 16px; 
     line-height: 1.4;
+    overflow-y: scroll; 
+    -webkit-text-size-adjust: 16px; 
+    -ms-text-size-adjust: 16px; 
 }
 
 /*
